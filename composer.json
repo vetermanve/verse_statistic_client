@@ -1,0 +1,32 @@
+{
+  "name": "verse/statistic-client",
+  "description": "Client library for publishing events to some verse/statistic based service",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Denisov Mikhail",
+      "email": "manwebdev@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Verse\\StatisticClient\\": "src/Verse/StatisticClient"}
+  },
+  "autoload-dev": {
+    "psr-4": {"Verse\\StatisticClient\\": "tests/Verse/StatisticClient"}
+  },
+  "require": {
+    "php": ">=7.1",
+    "verse/env": "*",
+    "psr/log": "^1.0",
+    "verse/router": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
+  },
+  "scripts": {
+    "test": [
+      "phpunit"
+    ]
+  }
+}
