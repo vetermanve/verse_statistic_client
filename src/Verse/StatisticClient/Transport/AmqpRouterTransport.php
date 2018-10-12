@@ -26,7 +26,7 @@ class AmqpRouterTransport implements StatisticWriteClientTransportInterface
         
         try {
             $result = $this->router->publish($payload, $this->queueName);
-        } catch (\Exception $exception) {
+        } catch (\Throwable $exception) {
             $message = __METHOD__.' cant send stats event because: '.$exception->getMessage();
             
             if ($logger = Env::getContainer()->bootstrap(LoggerInterface::class, false)) {
