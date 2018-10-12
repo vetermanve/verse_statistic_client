@@ -4,6 +4,8 @@
 namespace Verse\StatisticClient\Transport;
 
 
+use Psr\Log\LoggerInterface;
+use Verse\Di\Env;
 use Verse\Router\Router;
 
 class AmqpRouterTransport implements StatisticWriteClientTransportInterface
@@ -20,7 +22,24 @@ class AmqpRouterTransport implements StatisticWriteClientTransportInterface
     
     public function send(string $payload) : bool 
     {
-        return (bool)$this->router->publish($payload, $this->queueName);
+        $result = false;
+        
+        try {
+            $result = $this->router->publish($payload, $this->queueName);
+        } catch (\Exception $exception) {
+            $message = __METHOD__.' cant send stats event because: '.$exception->getMessage();
+            
+            if ($logger = Env::getContainer()->bootstrap(LoggerInterface::class, false)) {
+                /* @var $logger LoggerInterface */
+                $logger->error($message, [
+                    'ex' => $exception,
+                ]);
+            } else {
+                trigger_error($message, E_USER_WARNING);
+            }
+        }
+        
+        return $result;
     }
 
     /**
