@@ -1,6 +1,6 @@
 <?php
 
-namespace Verse\StatisticClient\WriteClient\Encoder;
+namespace Verse\StatisticClient\Encoder;
 
 interface EncoderInterface
 {

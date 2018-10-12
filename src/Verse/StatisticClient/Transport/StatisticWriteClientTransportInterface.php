@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Verse\StatisticClient\WriteClient\Transport;
+namespace Verse\StatisticClient\Transport;
 
 
 interface StatisticWriteClientTransportInterface

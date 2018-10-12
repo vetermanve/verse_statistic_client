@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Verse\StatisticClient\WriteClient;
+namespace Verse\StatisticClient;
 
 
 interface StatsClientInterface

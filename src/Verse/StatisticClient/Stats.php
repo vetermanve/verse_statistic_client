@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Verse\StatisticClient\WriteClient;
+namespace Verse\StatisticClient;
 
 
 class Stats implements StatsClientInterface
@@ -34,7 +34,7 @@ class Stats implements StatsClientInterface
      * @param float|int $count
      * @param int|null $eventTime
      * 
-     * @return $this|\Verse\Statistic\WriteClient\Stats
+     * @return $this|\Verse\StatisticClient\Stats
      */
     public function event($field, $userId, $scopeId = 0, array $context = [], float $count = 1, $eventTime = null)
     {
