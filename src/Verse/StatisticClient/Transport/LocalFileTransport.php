@@ -12,7 +12,7 @@ class LocalFileTransport implements StatisticWriteClientTransportInterface
     
     public function getCurrentFileName () : string
     {
-        return $this->statFilesDirectory.'/'.date("Ymd").'.stats.log';
+        return $this->statFilesDirectory.'/'.date('Ymd').'.stats.log';
     }
     
     public function send(string $payload) : bool
