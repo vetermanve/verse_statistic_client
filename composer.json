@@ -19,7 +19,7 @@
     "php": ">=7.1",
     "verse/env": "*",
     "psr/log": "^1.0",
-    "verse/router": "^1.0"
+    "verse/router": "^1.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.7"
